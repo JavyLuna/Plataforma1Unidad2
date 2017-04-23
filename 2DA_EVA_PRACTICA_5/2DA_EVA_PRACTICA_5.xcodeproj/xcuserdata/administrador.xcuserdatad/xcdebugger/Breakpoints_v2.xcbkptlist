@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "2DA_EVA_PRACTICA_5/AppDelegate.swift"
+            timestampString = "513018146.075697"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_DA_EVA_PRACTICA_5.AppDelegate.__deallocating_deinit"
+                  moduleName = "2DA_EVA_PRACTICA_5"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/administrador/Documents/Practicas%20Javier%20Luna/UNIDAD%202/2DA_EVA_PRACTICA_5/2DA_EVA_PRACTICA_5/AppDelegate.swift"
+                  timestampString = "513017195.705947"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_DA_EVA_PRACTICA_5.AppDelegate.init () -&gt; _DA_EVA_PRACTICA_5.AppDelegate"
+                  moduleName = "2DA_EVA_PRACTICA_5"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/administrador/Documents/Practicas%20Javier%20Luna/UNIDAD%202/2DA_EVA_PRACTICA_5/2DA_EVA_PRACTICA_5/AppDelegate.swift"
+                  timestampString = "513017195.707471"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "2DA_EVA_PRACTICA_5"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/administrador/Documents/Practicas%20Javier%20Luna/UNIDAD%202/2DA_EVA_PRACTICA_5/2DA_EVA_PRACTICA_5/AppDelegate.swift"
+                  timestampString = "513017195.70762"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
