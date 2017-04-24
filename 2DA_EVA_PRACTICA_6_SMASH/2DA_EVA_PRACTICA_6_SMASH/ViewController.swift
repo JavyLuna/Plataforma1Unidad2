@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var lblBotNombre: UILabel!
     @IBOutlet weak var lblBotDesc: UILabel!
     @IBOutlet weak var lblBotDir: UILabel!
-
+//Arreglo con los datos que los restaurantes 
     let arRestaurantes = ["Barrafina", "Bourke Street Bakery", "Cafe Dead End", "Cafe Loisl", "Cafe Lore", "Confessional", "Don Ostia", "Five Leaves", "Forkee Restaurant", "Graham Avenue Meats", "Haighs Chocolate", "Homei", "Palomino Espresso", "Petite Oyster", "Posatelier", "Royal Oak", "Tea Kha", "Thai Cafe", "Traif", "Up Sate", "Waffle Wolf"]
     
     let arImg = ["barrafina", "bourkestreetbakery","cafedeadend", "cafeloisl", "cafelore", "confessional", "donostia", "fiveleaves", "forkeerestaurant", "grahamavenuemeats", "haighschocolate", "homei", "palominoespresso", "petiteoyster", "posatelier", "royaloak", "teakha", "thaicafe", "traif", "upstate", "wafflewolf"]
@@ -45,14 +45,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return arRestaurantes.count
     }
     
-    
+//Muestra los datos de la tabla con sus imagenes     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCellWithIdentifier("idMiCelda") as! TableViewCellRest
         celda.lblNomRest.text = arRestaurantes[indexPath.row]
         let imgFija = UIImage(named: arImg[indexPath.row])
         celda.imgRest.image = imgFija
         celda.lblLemaRest.text = arDesc[indexPath.row]
-        
         return celda
     }
     
@@ -63,6 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         rowGlobal = indexPath.row
         performSegueWithIdentifier("plates", sender: self)
     }
+//Muestra los datos y los manda al segue para que seleccione los ingredientes     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "plates"{
             let miViewController = segue.destinationViewController as! platillos
@@ -70,8 +70,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             miViewController.imgName = arImg[rowGlobal]
         }
     }
-
-   
-
 }
 
