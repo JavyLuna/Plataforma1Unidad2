@@ -14,7 +14,7 @@ class RojoViewController: UIViewController {
     
     //@IBOutlet weak var lblDatos: UILabel!
     var sTexto1=""
-    
+ //Label creada, la cual nos va a modificar segun la opcion escogida en el ViewController    
     override func viewDidLoad() {
         super.viewDidLoad()
         lblDatos1.text = sTexto1
