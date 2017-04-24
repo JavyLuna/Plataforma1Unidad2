@@ -10,20 +10,21 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     @IBOutlet weak var imgCarros: UIImageView!
-    
+ //Arreglo con el nombre de los carros, colores y modelos    
     let carro = ["Camaro","Mustang","Challenger","Corvette","Audi R8"]
     let color = ["Rojo","Negro","Azul","Verde","Blanco","Naranja","Amarillo","Gris"]
     let modelo = ["2010","2011","2012","2013","2014","2015","2016","2017"]
-    
+//Arreglo con algunas combinaciones de carros, que al poner nos desplegara la pantalla    
     let combcarros = [
         "camaro2010rojo","camaro2014blanco","camaro2017azul",
         "challenger2010naranja","challenger2014blanco","challenger2017naranja",
         "corvette2010azul","corvette2014rojo","corvette2017negro",
         "mustang2010rojo","mustang2014blanco","mustang2017azul",
         "r82010rojo","r82014blanco","r82017rojo"]
-    
+ //Valor por defecto   
     var def = [0,0,0]
-    
+
+ //Todas las combinaciones posibles para que nos despliegue valores 
     var camarorojo2010 = [0,0,0]
     var camaroblanco2011 = [0,4,1]
     var camaronegro2012 = [0,1,2]
@@ -78,7 +79,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+//Nos mostrara los 3 pickers views y segun le piquemos a alguno nos mostrara algo
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if(component == 0){
             return carro[row] //FILA QUE SE DEBE REFRESCAR (Mostrar el dato según la fila actual)
@@ -89,11 +90,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         
     }
-    
+//Nos mostrara los 3 pickers views     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 3 //Regresar la cantidad de arreglos
     }
-    
+//Funcion que evalua la combinacion que hagamos, segun los que establecimos mas arriba, si es igual lo va a mostrar     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //var sMensaje: String
         
@@ -127,8 +128,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let imgFija = UIImage(named: combcarros[8])
             imgCarros.image = imgFija
         }   else if (def==mustangrojo2010) {
-        let imgFija = UIImage(named: combcarros[9])
-        imgCarros.image = imgFija
+            let imgFija = UIImage(named: combcarros[9])
+            imgCarros.image = imgFija
         }   else if (def==mustangblanco2014) {
             let imgFija = UIImage(named: combcarros[10])
             imgCarros.image = imgFija
@@ -149,13 +150,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let imgFija = UIImage(named: combcarros[14])
             imgCarros.image = imgFija
         }
+ //Y en caso de que se insgrese alguna combinacion que no este establecida, nos mostrara un mensaje avisandonos que no esta disponible
         else if (def != combcarros){
             let acMostrar = UIAlertController(title: "Auto no disponible", message: nil, preferredStyle: .Alert)
             let boton = UIAlertAction(title: "OK", style: .Default, handler: nil)
             acMostrar.addAction(boton)
             presentViewController(acMostrar, animated: true, completion: nil)
         }
-    
     }
         //if(component == 0) {
        //     sMensaje = carro[row]
