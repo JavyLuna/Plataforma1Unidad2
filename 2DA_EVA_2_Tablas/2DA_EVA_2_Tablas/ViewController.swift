@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    //Creamos el arreglo que guardara los datos
     let misDatos = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22"]
     
     override func viewDidLoad() {
@@ -20,11 +21,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+//La tabla nos regresara los datos del arreglo
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return misDatos.count
     }
-    
+//Nos mostrara un banner con botones, nos mostrara el dato seleccionado y un boton para cerrarlo    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let controlador = UIAlertController(title: "Tus datos", message: misDatos[indexPath.row], preferredStyle: .Alert)
         let boton = UIAlertAction (title: "Okay", style: .Default, handler: nil)
@@ -32,7 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         presentViewController(controlador, animated: true, completion: nil)
         
     }
-    
+ //Funcion que segun el dato que seleccionemos, al precionarlo nos lo va a cambiar de color   
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCellWithIdentifier("micelda")
         celda?.textLabel?.text = misDatos[indexPath.row]
