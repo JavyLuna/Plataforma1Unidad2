@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+//Arreglos con los nombrs de las materias, los semestres y el nombre de las imagenes     
     let misDatos = ["Fundamentos de programacion","Programacion Orientada a Obj","Estructura de datos","Tòpicos avanzados","Graficacion","Redes de computadoras","Sistemas Operativos para Moviles","Conmutacion y Enrutamiento de redes","Programacion logica  y funcional","Programacion web","Plataforma 1","Administracion de redes","Programacion web para moviles","Plataforma 2","Inteligencia artificial"]
     
     let semestre = ["1er Semestre","2do Semestre","3ero Semestre","4to Semestre","6to Semestre","6to Semestre","7mo Semestre","7mo Semestre","8avo Semestre","8vo Semestre","8avo semestre","8avo Semestre","9no Semestre","9no Semestre","9no Semestre"]
@@ -29,7 +30,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return misDatos.count
     }
-    
+//Al precionar un dato, nos muestra el Numero de semestre y el valor que agarramos    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let controlador = UIAlertController(title: semestre[indexPath.row], message: nil, preferredStyle: .Alert)
         let boton = UIAlertAction (title: "Okay", style: .Default, handler: nil)
@@ -37,7 +38,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         presentViewController(controlador, animated: true, completion: nil)
         
     }
-    
+//Nos returna los datos seleccionados     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCellWithIdentifier("micelda")
         celda?.textLabel?.text = misDatos[indexPath.row]
