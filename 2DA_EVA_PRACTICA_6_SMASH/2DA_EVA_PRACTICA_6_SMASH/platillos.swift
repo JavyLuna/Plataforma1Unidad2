@@ -9,7 +9,7 @@
 import UIKit
 
 class platillos: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+//Variables y outles 
     @IBOutlet weak var imgIng: UIImageView!
     @IBOutlet weak var imgIng1: UIImageView!
     @IBOutlet weak var nomRest: UILabel!
@@ -58,7 +58,7 @@ class platillos: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
 
     
-    
+ //Nos va a mostrar un mensaje con los datos del restaurante seleccionado 
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         def[component] = row
         num1 = def[0]
@@ -67,23 +67,19 @@ class platillos: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         let miImagen3 = UIImage(named: ingredientesImg[num2])
         imgIng.image = miImagen2
         imgIng1.image = miImagen3
-        let cuadro = UIAlertController(title: "Bienvenido a "+nomR+" sus ingredientes seleccionados son:", message: indredientes[num1]+" y "+indredientes2[num2], preferredStyle: .Alert)
+        let cuadro = UIAlertController(title: "Bienvenido a "+nomR+" sus ingredientes seleccionados sont:", message: indredientes[num1]+" y "+indredientes2[num2], preferredStyle: .Alert)
         let boton = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         cuadro.addAction(boton)
         let boton2 = UIAlertAction(title: "Compartir", style: .Default, handler: comparte)
         cuadro.addAction(boton2)
 
         presentViewController(cuadro, animated: true, completion: nil)
-        //
-        
-        
-
     }
     
     func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 64
     }
-
+//Funcion que comparte el archivo que hayamos picado 
     func comparte(alert: UIAlertAction) ->Void{
         let miTexto = "Vine a comer un Simpsonel que tiene " + indredientes[num1] + " y " + indredientes2[num2]
         let miImagen = UIImage(named: imgName)
