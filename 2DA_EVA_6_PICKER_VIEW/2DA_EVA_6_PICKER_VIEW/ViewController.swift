@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+//Arreglo con los datos , uno con los dias de la semana y otro con los meses del año     
     let asDatos=["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "sabado", "Domingo"]
     let arregloX=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
     
@@ -21,7 +22,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+//Aqui se evalua los datos de los arreglos, que nos muestra los 2   
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if(component == 0){
             return asDatos[row] //FILA QUE SE DEBE REFRESCAR (Mostrar el dato según la fila actual)
@@ -29,11 +30,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             return arregloX[row]
         }
     }
-    
+//Nos mostrara los 2 pickers views     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 2 //Regresar la cantidad de arreglos
     }
-    
+//Nos muestra el mensaje al precionar algun valor de cualquier picker view     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         var sMensaje: String
         if(component == 0) {
@@ -46,7 +47,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         acMostrar.addAction(boton)
         presentViewController(acMostrar, animated: true, completion: nil)
     }
-    
+ //Segun al picker view, nos mostrara el dato que precionemos    
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if(component == 0) {
             return asDatos.count //Regresar el numero de datos en el arreglo
