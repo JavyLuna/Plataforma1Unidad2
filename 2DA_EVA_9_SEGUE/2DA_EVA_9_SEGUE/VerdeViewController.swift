@@ -12,7 +12,7 @@ class VerdeViewController: UIViewController {
 
     @IBOutlet weak var lblDatos: UILabel!
     var sTexto=""
-    
+  //Variable label del texto, que modificaremos desde el ViewController  
     override func viewDidLoad() {
         super.viewDidLoad()
         lblDatos.text = sTexto
