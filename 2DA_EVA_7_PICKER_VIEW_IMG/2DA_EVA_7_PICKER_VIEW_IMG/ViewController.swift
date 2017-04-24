@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//Arreglo con las imagenes 
         aiImagenes = [UIImage(named: "facebook")!,
             UIImage(named: "google")!,
             UIImage(named: "instagram")!,
@@ -39,7 +40,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return aiImagenes.count
     }
-    
+//Nos regresa las imagenes del pickerview    
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
         let imagen = aiImagenes [row]
         let imgView = UIImageView(image: imagen)
