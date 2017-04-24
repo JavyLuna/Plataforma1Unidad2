@@ -10,6 +10,7 @@
 import UIKit
 
 class ViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataSource  {
+//Variables globales     
     var misDatos = ["1","2","3","4","5","6","7","8","9","0"]
     var defecto = [0,0,0]
     var arContra = [1,1,5] //2-2-6
@@ -24,6 +25,8 @@ class ViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataS
         
         // Do any additional setup after loading the view, typically from a nib.
     }
+//Funcion que evalua, si la combinacion de usuario y clave son las guardadas mostrara un mensaje de que iniciaste sesion y te manda
+// a un segue de que ya iniciaste sesion y si te equivocas 
     @IBAction func btnEntrar(sender: AnyObject) {
         if(condicion == true){
             let cuadro = UIAlertController(title: "Bienvenido", message: usuario, preferredStyle: .Alert)
@@ -58,6 +61,7 @@ class ViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataS
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         defecto[component] = row
         let usu = usuText.text
+    //Te evalua si la combinacion es la correcta, si lo es ingresa si no marcara falso    
         if (defecto == arContra && usuario == usu){
             condicion = true
         }else{
