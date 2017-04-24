@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+//Arreglo con los nombres de los restaurantes y el nombre de las imagenes     
     let misDatos = ["Barra fina","Bourke Street Bakery","Cafe Deadend","Cafe Loisl","Cafe Lore","Confessional","Donostia","Fiveleaves","Forkee Restaurant","Grahamavenuemeats","Haighschocolate","Homei","Palominoespresso","Petiteoyster","Posatelier","Royaloak","Teakha","Thai Cafe","Traif","Upstate","Waffle Wolf"]
     let imagenes = ["barrafina","bourkestreetbakery","cafedeadend","cafeloisl","cafelore","confessional","donostia","fiveleaves","forkeerestaurant","grahamavenuemeats","haighschocolate","homei","palominoespresso","petiteoyster","posatelier","royaloak","teakha","thaicafe","traif","upstate","wafflewolf"]
     
@@ -54,7 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let compartirAct = UITableViewRowAction(style: .Default, title: "Compartir", handler: comparteRestaurante)
         return [compartirAct]
     }
-    
+//Funcion que nos comparte el restaurante en alguna red social     
     func comparteRestaurante(action: UITableViewRowAction, indexPath: NSIndexPath) -> Void {
         let miTexto = "Vine a comer en " + misDatos[indexPath.row]
         let miImagen = UIImage(named: imagenes[indexPath.row])
@@ -62,7 +63,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         presentViewController(actController, animated: true, completion: nil)
     
     }
-    
+ //Funcion que manda llamar al segue, y nos envia los datos que hayamos seleccionado con anterioridad    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "detalle"{
             if let indexPath = tableViewRest.indexPathForSelectedRow {
